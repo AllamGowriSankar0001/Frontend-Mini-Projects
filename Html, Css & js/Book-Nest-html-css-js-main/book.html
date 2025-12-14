@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book-Nest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="book.css">
+</head>
+
+
+<body>
+    <header>
+        <nav>
+            <h1 class="logo"> <a href="index.html">BN</a></h1>
+            <div class="navbar">
+                <ul>
+                    <li class="title">Book-Nest</li>
+                </ul>
+            </div>
+            <div class="actions">
+                <div style=" position: relative;"> <span class="material-symbols-outlined" aria-label="Saved"
+                        onclick="window.location.href='saved.html'">favorite</span>
+                    <p id="saved-quantity"
+                        style="position: absolute; top: 0; left: 32px; font-size: 10px;font-weight: bold;"></p>
+                </div>
+                <div style=" position: relative;"> <span class="material-symbols-outlined" aria-label="Cart"
+                        onclick="window.location.href='cart.html'">shopping_cart</span>
+                    <p id="cart-quantity"
+                        style="position: absolute; top: 0; left: 32px; font-size: 10px;font-weight: bold;"></p>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="card">
+
+        </div>
+    </main>
+    <div class="toast" id="toast"></div>
+    <script src="book.js">
+
+
+
+    </script>
+</body>
+
+</html>

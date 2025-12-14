@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <link rel="stylesheet" href="index.css">
+     <link 
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" 
+    rel="stylesheet"
+  >
+</head>
+
+<body>
+    <main>
+        <div class="content">
+
+            
+            <div class="heading">
+                <h1>Temperature Converter</h1>
+                <p class="description">
+                    Welcome to the Temperature Converter! 🌡️  
+                    This simple tool allows you to easily convert between <b>Celsius</b>, <b>Fahrenheit</b>, and <b>Kelvin</b>.  
+                    Just enter a temperature value, select the unit you’re starting with, and hit the **Convert** button — 
+                    we’ll instantly show you the equivalent temperature in your desired unit.
+            </p>
+        </div>
+        
+        <div class="instructions">
+            <h2>How It Works:</h2>
+            <ul>
+                <li> Enter a temperature in the input field — make sure it’s a valid number!</li>
+                <li> Choose whether your input is in <strong>Celsius</strong>, <strong>Fahrenheit</strong>, or <strong>Kelvin</strong>. And also choose to which unit  you want to convert your input.</li>
+                <li> Click the <strong>Convert</strong> button to perform the conversion.</li>
+                <li> The converted temperature and its correct unit will appear below.</li>
+            </ul>
+            <p>
+                For an extra challenge, this converter can also handle conversions between all three units — 
+                so you can easily switch between Celsius, Fahrenheit, and Kelvin as needed!
+            </p>
+        </div>
+    </div>
+    <div class="form">
+        <form >
+            <label for="input">Enter the  temperature</label>
+            <input type="text" id="input">
+            <label for="from">From</label>
+            <select name="from" id="from">
+                <option value="Celsius">Celcius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select>
+            <label for="to">To</label>
+            <select name="to" id="to">
+                <option value="Celcius">Celcius</option>
+                <option value="Fahrenheit">Fahrenheit</option>
+                <option value="Kelvin">Kelvin</option>
+            </select>
+            <button type="button" onclick="convertfrom()">Convert Now</button>
+            <h1 id="result"></h1>
+        </form>
+    </div>
+    </main>
+
+    <script src="index.js"></script>
+</body>
+
+</html>

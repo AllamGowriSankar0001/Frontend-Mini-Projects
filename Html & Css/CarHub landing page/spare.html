@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spare Parts • CarHub</title>
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background: #000;
+      color: #fff;
+      font-family: Arial, sans-serif;
+    }
+
+    a {
+      color: #fff;
+      text-decoration: none
+    }
+
+    ul {
+      list-style: none;
+      display: flex;
+      color: #fff
+    }
+
+    li {
+      padding: 20px;
+      margin-top: 20px;
+      margin-left: 10px;
+      font-family: 'Righteous'
+    }
+
+    li:hover {
+      transform: translateY(-3px);
+      transition: transform .5s ease;
+      cursor: pointer;
+      font-size: 17px
+    }
+
+    .menu-toggle {
+      display: none;
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 10px;
+      font-family: 'Righteous';
+      cursor: pointer;
+    }
+
+    /* CSS-only toggle control */
+    #menuToggle {
+      position: absolute;
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    .menu-toggle:focus {
+      outline: 2px solid rgba(255, 255, 255, 0.5);
+      outline-offset: 2px;
+    }
+
+    .hamburger {
+      display: none;
+      position: absolute;
+      right: 16px;
+      top: 80px;
+      background: rgba(0, 0, 0, 0.9);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 8px;
+      min-width: 180px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Show dropdown when checkbox is checked */
+    #menuToggle:checked ~ #mobileMenu {
+      display: block;
+    }
+
+    .hamburger .line {
+      padding: 8px 10px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .hamburger .line:last-child {
+      border-bottom: none;
+    }
+
+    nav {
+      background: rgba(255, 255, 255, 0);
+      margin: auto;
+      width: 97%;
+      padding-left: 50px;
+      margin-top: 20px;
+      border-radius: 100px;
+      height: auto;
+      position: sticky;
+      top: 0px;
+      z-index: 1000
+    }
+
+    .container {
+      margin-top: 60px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 18px;
+      gap: 8px;
+    }
+
+    .title {
+      font-family: 'Irish Grover', cursive;
+      font-size: 42px;
+      text-align: center
+    }
+
+    .sub {
+      font-family: 'Righteous';
+      color: #d5d5d5;
+      margin-top: 6px
+    }
+
+    .grid {
+      width: 95%;
+      max-width: 1100px;
+      margin: 24px auto 100px;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+      gap: 16px
+    }
+
+    .card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 14px;
+      padding: 16px
+    }
+
+    .card h3 {
+      font-family: 'Irish Grover', cursive;
+      font-size: 20px;
+      margin-bottom: 6px
+    }
+
+    .card p {
+      font-family: 'Righteous';
+      font-size: 12px;
+      color: #cfcfcf
+    }
+
+    .thumb {
+      width: 100%;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 10px;
+      background: #0a0a0a;
+      margin-bottom: 8px
+    }
+
+    @media (max-width:520px) {
+      nav {
+        padding-left: 12px;
+      }
+
+      nav h1 {
+        font-size: 15px;
+        float: none !important;
+        margin: 10px 0 0 0 !important;
+        display: inline-block;
+      }
+
+      .nav-links {
+        display: none !important;
+      }
+
+      .menu-toggle {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        position: absolute;
+        right: 12px;
+        top: 18px;
+      }
+
+      .hamburger {
+        display: none;
+      }
+
+      .container {
+        margin-top: 80px;
+      }
+
+      .title {
+        font-size: 28px;
+        text-align: left;
+        width: 95%;
+      }
+
+      .sub {
+        width: 95%;
+        text-align: left;
+      }
+
+      .hamburger .line {
+        display: block !important;
+      }
+      .logo{
+        font-size: 35px;
+        font-family: 'Irish Grover', cursive; 
+        margin-left: 20px !important;
+        position: relative;
+        bottom: 25px !important;
+        margin-bottom: none !important;
+      }
+      .hamburger .line a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Righteous';
+        font-size: 12px;
+      }
+
+      .grid {
+        width: 100%;
+        margin-top: 0px !important;
+        grid-template-columns: 1fr;
+        gap: 14px
+      }
+
+      .card {
+        padding: 12px;
+      }
+
+      .thumb {
+        height: 200px;
+        border-radius: 12px;
+      }
+    }
+
+    @media (max-width:360px) {
+      .grid {
+        grid-template-columns: 1fr
+      }
+      .logo{
+        font-size: 35px;
+        font-family: 'Irish Grover', cursive; 
+        margin-top: 20px !important;
+      }
+      .nav-links {
+        display: none !important;
+      }
+
+      nav {
+        padding-left: 10px;
+      }
+
+      nav h1 {
+        font-size: 26px;
+        float: none !important;
+      }
+
+      .hamburger .line {
+        display: block;
+      }
+
+      .hamburger .line a {
+        color: #fff;
+        text-decoration: none;
+        font-family: 'Righteous';
+        font-size: 12px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr
+      }
+
+      .thumb {
+        height: 200px;
+      }
+    }
+
+    @media (min-width:521px) and (max-width:1024px) {
+      nav {
+        padding-left: 24px;
+        width: 98%;
+      }
+      .nav-links {
+        display: flex !important;
+        gap: 8px;
+      }
+      .menu-toggle {
+        display: none !important;
+      }
+      .hamburger {
+        display: none !important;
+      }
+      .container {
+        margin-top: 70px;
+        padding: 20px;
+        gap: 10px;
+      }
+      .title {
+        font-size: 36px;
+      }
+      .sub {
+        font-size: 14px;
+      }
+      .grid {
+        width: 96%;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 16px;
+      }
+      .card {
+        padding: 14px;
+      }
+      .thumb {
+        height: 180px;
+      }
+      .logo{
+        font-size: 48px !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1 style="font-size: 70px ;font-family: 'Irish Grover', cursive;float: left;margin-right: 30px;"><a
+          href="index.html " class="logo">CARHUB</a></h1>
+      <ul class="nav-links">
+        <li><a href="index.html" target="_self">Home</a></li>
+        <li><a href="availablecars.html" target="_self">Available Cars</a></li>
+        <li><a href="spare.html" target="_self">Spare</a></li>
+        <li><a href="about.html" target="_self">About</a></li>
+      </ul>
+      <input type="checkbox" id="menuToggle" aria-controls="mobileMenu" />
+      <label class="menu-toggle" for="menuToggle">☰</label>
+      <div class="hamburger" id="mobileMenu">
+        <div class="line"><a href="home.html" target="_self">Home</a></div>
+        <div class="line"><a href="availablecars.html" target="_self">Available Cars</a></div>
+        <div class="line"><a href="spare.html" target="_self">Spare</a></div>
+        <div class="line"><a href="about.html" target="_self">About</a></div>
+      </div>
+    </nav>
+  </header>
+  <main class="container">
+    <h2 class="title">Spare Parts</h2>
+    <p class="sub">High quality OEM and aftermarket parts</p>
+    <section class="grid">
+      <div class="card"><img class="thumb"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm20hF-k12AJKj8e33vPRHvxMiVnILqUlbiw&s"
+          alt="Performance Brakes">
+        <h3>Performance Brakes</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://bombaytyres.com/cdn/shop/files/D22A7203copy..jpg?v=1706366227&width=1946" alt="Alloy Wheels">
+        <h3>Alloy Wheels</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://spn-sta.spinny.com/blog/20220228143408/ezgif.com-gif-maker-2021-12-01T143615.078.jpg?compress=true&quality=80&w=800&dpr=2.6"
+          alt="Suspension">
+        <h3>Suspension</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb" src="https://m.media-amazon.com/images/I/51uSTEr1wUL.jpg" alt="Exhaust">
+        <h3>Exhaust</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb" src="https://5.imimg.com/data5/PK/QX/MY-1888929/car-air-filters-500x500.jpg"
+          alt="Air Filter">
+        <h3>Air Filter</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTo2HODrzdiuQFDj7TW0t4VXfALdzrB99zBgQ&s"
+          alt="Oil Filter">
+        <h3>Oil Filter</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://spn-sta.spinny.com/blog/20220921165654/SLI-edited-scaled.webp?compress=true&quality=80&w=732&dpr=2.6"
+          alt="Battery">
+        <h3>Battery</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://s3.amazonaws.com/3ge.shared.assets/things-to-know/toyota/v1/ttk-image-general_maintenance_08_07-3.png"
+          alt="Spark Plugs">
+        <h3>Spark Plugs</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://www.edmunds.com/assets/m/cs/bltb8f76d4047295117/66ce1eea5ba1e0ab397333be/Timing_Belt_1600.jpg"
+          alt="Timing Belt">
+        <h3>Timing Belt</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://autoimage.capitalone.com/cms/Auto/assets/images/2407-hero-car-headlights.jpg" alt="Headlights">
+        <h3>Headlights</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://carhatke.com/image/cache/catalog/categories/car-tail-lights--1500x1500.jpg" alt="Taillights">
+        <h3>Taillights</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://bestparts.ca/cdn/shop/articles/1_How_to_Replace_a_Radiator_a_radiator_1000x.webp?v=1722746470"
+          alt="Radiator">
+        <h3>Radiator</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpk-9TME_nvXJo3G2i8CWzZR-LDime6SAbsA&s"
+          alt="Alternator">
+        <h3>Alternator</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://5.imimg.com/data5/VW/RA/OQ/SELLER-11603599/starter-motors-500x500.jpg" alt="Starter Motor">
+        <h3>Starter Motor</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://5.imimg.com/data5/SELLER/Default/2024/7/431976282/UX/QJ/OV/144012450/car-fuel-pump.png"
+          alt="Fuel Pump">
+        <h3>Fuel Pump</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://img1.wsimg.com/isteam/ip/3d4cded9-18d6-4652-967a-3bfd1cea11b8/ecu_steuergeraet_epd_thumbnail-0001.jpg"
+          alt="ECU Module">
+        <h3>ECU Module</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtsrNxCiHMIPi9utSaZnuR3GNlh_QAeH5mrA&s"
+          alt="Turbocharger">
+        <h3>Turbocharger</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEbB2J0PUW_7dbeMQ_wUvMb9QNxuZ3fisyLQ&s"
+          alt="Intercooler">
+        <h3>Intercooler</h3>
+        <p>Quality assured.</p>
+      </div>
+      <div class="card"><img class="thumb"
+          src="https://img.rockwool.com/https%3A%2F%2Fbrandcommunity.rockwool.com%2Fasset%2F0sMm2UzvG2yPfULPn-VaLQ?auto=format&s=71d90e84937264ab34498b7b6bf8e471"
+          alt="Brake Pads">
+        <h3>Brake Pads</h3>
+        <p>Quality assured.</p>
+      </div>
+    </section>
+  </main>
+</body>
+
+
+
+</html>

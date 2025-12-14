@@ -1,0 +1,417 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    /* box-sizing: border-box;  */
+}
+body{
+    background-color: black;
+}
+a{
+    text-decoration: none;
+
+    color: rgb(255, 255, 255);
+}
+li:hover{
+    transform: translateY(-3px) ;
+    transition: transform 0.5s ease;
+    cursor: pointer;
+    font-size: 17px;
+}
+ul{
+    display: flex;
+    /* border: 2px solid orange; */
+    list-style: none;
+    /* justify-content: center; */
+    
+    color: white;
+}
+/* shared navbar additions */
+.nav-links{ display:flex; }
+.menu-toggle{ display:none; background:transparent; border:1px solid rgba(255,255,255,0.4); color:#fff; padding:6px 10px; border-radius:10px; font-family:'Righteous'; cursor:pointer; }
+#menuToggle{ position:absolute; opacity:0; pointer-events:none; }
+.hamburger{ display:none; position:absolute; right:16px; top:80px; background:rgba(0,0,0,0.9); border:1px solid rgba(255,255,255,0.18); border-radius:12px; padding:8px; min-width:180px; box-shadow:0 8px 24px rgba(0,0,0,0.5); }
+#menuToggle:checked ~ #mobileMenu{ display:block; }
+.hamburger .line{ padding:8px 10px; border-bottom:1px solid rgba(255,255,255,0.08); }
+.hamburger .line:last-child{ border-bottom:none; }
+li{
+    padding: 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    height: auto;
+    font-family: 'Righteous';
+    margin-top: 20px ;
+    margin-left: 10px;
+}
+nav{
+    background-color: rgb(0, 0, 0);
+    margin: auto;
+    width: 97%;
+    padding-left: 50px;
+    margin-top: 20px;
+    border-radius: 100px;
+    height: auto;
+    position: sticky;
+    top: 0px;
+    z-index: 1000;
+}
+.model1:hover {
+    transform: scale(1.1);
+    transition: transform 0.5s ease;
+
+}
+.company {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    margin-left: 10px;
+    color: white;
+    font-family: 'Vujahday Script', cursive;
+}
+.company img {
+    width: 40px;
+    height: 40px;
+    margin-left: 10px;
+}
+.logoos::-webkit-scrollbar {
+  display: none;
+}
+.logoos{
+        scroll-behavior: smooth;
+
+}
+.arrow1{
+    background-color: transparent;
+    border: none;
+    color: rgba(240, 248, 255, 0.159);
+    font-size: 15px;
+    cursor: pointer;
+    /* position: absolute; */
+    /* bottom: 30px; */
+    z-index: 1000;
+    animation: vibrate 1s ease-in-out infinite alternate;
+}
+
+@keyframes vibrate1{
+    from{
+        transform: translateX(10px);
+    }
+    to{
+        transform: translateX(0px);
+    }
+}
+@keyframes vibrate{
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(10px);
+    }
+    /* 0%{
+        transform: translateX(0px);
+    }
+    25%{
+        transform: translateX(10px);
+    }
+    50%{
+        transform: translateX(0px);
+    }
+    75%{
+        transform: translateX(-10px);
+    }
+    100%{
+        transform: translateX(0px);
+    } */
+}
+.arrow2{
+    background-color: transparent;
+    border: none;
+    color: rgba(240, 248, 255, 0.274);
+    font-size: 15px;
+    cursor: pointer;
+    /* position: absolute; */
+    /* bottom: 30px; */
+    z-index: 1000;
+    animation: vibrate1 1s ease-in-out infinite alternate;
+}
+.toyota{
+    display: none;
+}
+#toyota1:hover .toyota{
+    
+    display: flex !important;
+
+}
+.tesla{
+    display: none;
+}
+#tesla1:hover .tesla{
+    display: flex !important;
+
+}
+.bmw{
+    display: none !important;
+}
+#bmw1:hover .bmw{
+    display: flex !important;
+
+}
+.benz{
+    display: none !important;
+}
+#benz1:hover .benz{
+    display: flex !important;
+
+}
+.ford{
+    display: none !important;
+}
+#ford1:hover .ford{
+    display: flex !important;
+
+}
+.honda{
+    display: none !important;
+}
+#honda1:hover .honda{
+    display: flex !important;
+
+}
+.hyundai{
+    display: none !important;
+}
+#hyundai1:hover .hyundai{
+    display: flex !important;
+
+}
+.maruti{
+    display: none;
+}
+#maruti1:hover .maruti{
+    display: flex !important;
+}
+
+/* Remaining company hover reveals */
+.mg{
+    display: none !important;
+}
+#mg1:hover .mg{
+    display: flex !important;
+}
+
+.porsche{
+    display: none !important;
+}
+#porsche1:hover .porsche{
+    display: flex !important;
+}
+
+.volkswagen{
+    display: none !important;
+}
+#volkswagen1:hover .volkswagen{
+    display: flex !important;
+}
+
+.audi{
+    display: none !important;
+}
+#audi1:hover .audi{
+    display: flex !important;
+}
+
+.jaguar{
+    display: none !important;
+}
+#jaguar1:hover .jaguar{
+    display: flex !important;
+}
+
+.landrover{
+    display: none !important;
+}
+#landrover1:hover .landrover{
+    display: flex !important;
+}
+
+.volvo{
+    display: none !important;
+}
+#volvo1:hover .volvo{
+    display: flex !important;
+}
+
+.filters label {
+    padding: 8px 16px;
+    border: 2px solid #444;
+    border-radius: 25px;
+    font-size: 16px;
+    cursor: pointer;
+    font-family: 'Righteous';
+
+  }
+  .filters input[type="radio"] {
+    display: none; /* hide the ugly default radio */
+  }
+  .filters label:hover {
+    background-color: #f2f2f2;
+    color: #000;
+    transform: scale(1.05);
+  }
+  .filters input[type="radio"]:checked + label {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border-color: #222;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+  }
+/* Available Cars additions */
+.available-hero{
+    margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    gap: 12px;
+    padding: 0 20px;
+}
+.available-title{
+    font-family: 'Irish Grover', cursive;
+    font-size: 42px;
+    text-align: center;
+}
+.available-sub{
+    font-family: 'Righteous', cursive;
+    font-size: 14px;
+    color: #d5d5d5;
+}
+.filters{
+    margin-top: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+/* CSS-only radio filter styles */
+.no-js-filters input[type="radio"]{ display:none; }
+.no-js-filters label{
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 999px;
+    font-family: 'Righteous';
+    cursor: pointer;
+}
+.no-js-filters input[type="radio"]:checked + label{
+    background: #ffffff;
+    color: #000;
+}
+.filter-input,.filter-select{
+    background-color: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    padding: 10px 12px;
+    border-radius: 10px;
+    font-family: 'Righteous';
+    outline: none;
+}
+.filter-input::placeholder{
+    color: #bbbbbb;
+}
+.cars-grid{
+    width: 95%;
+    max-width: 1200px;
+    margin: 24px auto 120px auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+.car-card{
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 14px;
+    overflow: hidden;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+}
+.car-image{
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    display: block;
+    background: #0a0a0a;
+}
+.car-info{
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.car-name{
+    font-family: 'Irish Grover', cursive;
+    font-size: 20px;
+}
+.car-meta{
+    font-family: 'Righteous';
+    font-size: 12px;
+    color: #cccccc;
+}
+.car-actions{
+    margin-top: 8px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.price-tag{ font-family:'Righteous'; font-size:12px; color:#ffd700; margin-right: auto; }
+.btn-primary,.btn-outline{
+    padding: 8px 12px;
+    border-radius: 10px;
+    font-family: 'Righteous';
+    font-size: 12px;
+    text-decoration: none;
+}
+.btn-primary{
+    background: #ffffff;
+    color: #000000;
+}
+.btn-outline{
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255,255,255,0.6);
+}
+@media (max-width: 520px){
+    .nav-links{ display:none !important; }
+    .menu-toggle{ display:inline-flex; align-items:center; gap:6px; position:absolute; right:12px; top:18px; }
+    nav h1{ font-size:28px !important; float:none !important; margin:10px 0 0 0 !important; display:inline-block; }
+    .available-title{ font-size: 32px; }
+    .available-sub{ font-size: 12px; }
+    .filters{ width: 100%; padding: 0 10px; }
+    .filter-input,.filter-select{ width: 100%; }
+    .cars-grid{ grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; width: 100%; }
+}
+@media (max-width: 360px){
+    .cars-grid{ grid-template-columns: 1fr; }
+}
+/* CSS-only filtering by brand */
+#brand-tesla:checked ~ .cars-grid .car-card:not(.brand-tesla){ display:none; }
+#brand-bmw:checked ~ .cars-grid .car-card:not(.brand-bmw){ display:none; }
+#brand-mercedes:checked ~ .cars-grid .car-card:not(.brand-mercedes){ display:none; }
+#brand-ferrari:checked ~ .cars-grid .car-card:not(.brand-ferrari){ display:none; }
+#brand-ford:checked ~ .cars-grid .car-card:not(.brand-ford){ display:none; }
+#brand-honda:checked ~ .cars-grid .car-card:not(.brand-honda){ display:none; }
+#brand-toyota:checked ~ .cars-grid .car-card:not(.brand-toyota){ display:none; }
+@media (min-width: 521px) and (max-width: 1024px){
+  .nav-links{ display:flex !important; gap: 10px; }
+  .menu-toggle{ display:none !important; }
+  .hamburger{ display:none !important; }
+  nav{ padding-left: 24px; width: 98%; }
+  .available-title{ font-size: 38px; }
+  .available-sub{ font-size: 13px; }
+  .filters{ gap: 12px; }
+  .cars-grid{ grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+  .car-image{ height: 160px; }
+  .car-info{ padding: 12px; }
+}

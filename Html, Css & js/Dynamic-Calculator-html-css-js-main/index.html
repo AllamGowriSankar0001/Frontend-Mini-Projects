@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Calculator</title>
+    <link rel="stylesheet" href="index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <main>
+        <div class="content">
+            <h1>Smart Calculator</h1>
+            <p class="tagline">Your daily math companion — simple, fast, and beautiful.</p>
+
+            <div class="description">
+                <p>
+                    This calculator helps you perform quick arithmetic operations with ease.
+                    Whether you’re solving homework problems, checking bills, or doing everyday math,
+                    this tool is built to make your calculations faster and more accurate.
+                </p>
+            </div>
+
+            <div class="features">
+                <h3>✨How It Works</h3>
+                <ul>
+                    <li>Click the number buttons to enter digits.</li>
+                    <li>Use the operator buttons (+, −, ×, ÷) for your operations.
+                    </li>
+                    <li>Press = to see the result instantly.
+                    </li>
+                    <li>Click AC to clear the screen and start a new calculation.
+                    </li>
+                    <li>Use parentheses ( ) to group operations.
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="calculators">
+            <select id="calcType" onchange="use()">
+                <option value="basic">Basic Calculator</option>
+                <option value="scientific">Scientific Calculator</option>
+                <option value="bmi">BMI Calculator</option>
+                <option value="loan">Loan / EMI Calculator</option>
+                <option value="interest">Interest Calculator</option>
+                <option value="age">Age Calculator</option>
+                <option value="unit">Unit Converter</option>
+                <option value="tax">Tax / GST Calculator</option>
+            </select>
+            <!-- Calculator -->
+            <section class="calculator basic" style="max-width: 270px;">
+                <div class="screen"></div>
+
+                <div class="keys">
+                    <button class="btn paren key" value="(" onclick="appendtoDisplay('(')">(</button>
+                    <button class="btn paren key" value=")" onclick="appendtoDisplay(')')">)</button>
+                    <button class="btn operator key" value="%" onclick="appendtoDisplay('%')">%</button>
+                    <button class="btn clear" value="AC" style="background-color: rgba(255, 0, 0, 0.442);"
+                        onclick="allclear()">AC</button>
+
+                    <button class="btn number key" value="7" onclick="appendtoDisplay('7')">7</button>
+                    <button class="btn number key" value="8" onclick="appendtoDisplay('8')">8</button>
+                    <button class="btn number key" value="9" onclick="appendtoDisplay('9')">9</button>
+                    <button class="btn operator key" value="/" onclick="appendtoDisplay('/')">/</button>
+
+                    <button class="btn number key" value="4" onclick="appendtoDisplay('4')">4</button>
+                    <button class="btn number key" value="5" onclick="appendtoDisplay('5')">5</button>
+                    <button class="btn number key" value="6" onclick="appendtoDisplay('6')">6</button>
+                    <button class="btn operator key" value="*" onclick="appendtoDisplay('*')">*</button>
+
+                    <button class="btn number key" value="1" onclick="appendtoDisplay('1')">1</button>
+                    <button class="btn number key" value="2" onclick="appendtoDisplay('2')">2</button>
+                    <button class="btn number key" value="3" onclick="appendtoDisplay('3')">3</button>
+                    <button class="btn operator key" value="-" onclick="appendtoDisplay('-')">-</button>
+
+                    <button class="btn number key" value="0" onclick="appendtoDisplay('0')">0</button>
+                    <button class="btn decimal key" value="." onclick="appendtoDisplay('.')">.</button>
+                    <button class="btn equal" value="=" onclick="work()"  style="background-color: rgb(0, 98, 65);">=</button>
+                    <button class="btn operator key" value="+" onclick="appendtoDisplay('+')">+</button>
+                </div>
+            </section>
+            <!-- Other calculator placeholders (hidden by default) -->
+            <section class="calculator scientific" style="max-width: 492px;padding: 20px;">
+                <div class="screen1"></div>
+                <div class="keys1">
+                    <!-- <button onclick="appendToDisplay1('2nd')">2nd</button>
+                    <button onclick="appendToDisplay1('mr')">mr</button>
+                    <button onclick="appendToDisplay1('m+')">m+</button>
+                    <button onclick="appendToDisplay1('mc')">mc</button> -->
+                    <button onclick="appendToDisplay1('Math.sin(')">sin</button>
+                    <button onclick="appendToDisplay1('Math.cos(')">cos</button>
+                    <button onclick="appendToDisplay1('Math.tan(')">tan</button>
+                    <button onclick="appendToDisplay1('Math.cot(')">cot</button>
+                    <button onclick="appendToDisplay1('Math.sec(')">sec</button>
+                    <button onclick="appendToDisplay1('Math.csc(')">csc</button>
+                    
+                    <!-- <button class="func" onclick="appendToDisplay1('CE')">CE</button> -->
+                    <button class="func" style="background-color: rgba(255, 0, 0, 0.442);"
+                    onclick="allclear1()">C</button>
+                    <button class="del" onclick="deleteLast()">⌫</button>
+                    
+                    
+                    
+                    <button onclick="appendToDisplay1('(')">(</button>
+                    <button onclick="appendToDisplay1(')')">)</button>
+                    <button onclick="appendToDisplay1('%')">%</button>
+                    <button onclick="appendToDisplay1('/')">÷</button>
+                    <!-- <button onclick="appendToDisplay1('Math.E')">e</button> -->
+                    <button onclick="appendToDisplay1('+')">+</button>
+
+                    <button onclick="appendToDisplay1('7')">7</button>
+                    <button onclick="appendToDisplay1('8')">8</button>
+                    <button onclick="appendToDisplay1('9')">9</button>
+                    <button onclick="appendToDisplay1('*')">×</button>
+
+                    <button onclick="appendToDisplay1('**2')">x²</button>
+                    <button onclick="appendToDisplay1('**3')">x³</button>
+                    <button onclick="appendToDisplay1('**')">xʸ</button>
+                    <button onclick="appendToDisplay1('Math.exp(')">eˣ</button>
+
+                    <button onclick="appendToDisplay1('4')">4</button>
+                    <button onclick="appendToDisplay1('5')">5</button>
+                    <button onclick="appendToDisplay1('6')">6</button>
+                    <button onclick="appendToDisplay1('-')">-</button>
+
+                    <button onclick="appendToDisplay1('10**')">10ˣ</button>
+                    <button onclick="appendToDisplay1('Math.log(')">ln</button>
+                    <button onclick="appendToDisplay1('2**')">2ˣ</button>
+                    <button onclick="appendToDisplay1('Math.abs(')">|x|</button>
+
+                    <button onclick="appendToDisplay1('1')">1</button>
+                    <button onclick="appendToDisplay1('2')">2</button>
+                    <button onclick="appendToDisplay1('3')">3</button>
+
+                    <button onclick="appendToDisplay1('Deg')">Deg</button>
+                    <button onclick="appendToDisplay1(')/Math.log(')">logₓ</button>
+                    <button onclick="appendToDisplay1('!')">x!</button>
+
+                    <!-- <button onclick="appendToDisplay1('±')">±</button> -->
+                    <button onclick="appendToDisplay1('.')">.</button>
+                    <button class="equal" style="background-color: rgb(0, 98, 65);" onclick="calculate()">=</button>
+                    <button onclick="appendToDisplay1('0')" class="zero">0</button>
+                </div>
+
+            </section>
+
+
+            <section class="calculator bmi" style="    max-width: 385px;">
+                <div class="keys2 bmi-controls">
+                    <div class="bmi-row">
+                        <label for="range" style="margin-bottom: 20px;">Height (cm)</label>
+                        <div class="bmi-range">
+                            <input type="range" name="range" id="range" min="50" max="250" value="170"
+                                onchange="range()">
+                            <div class="range-value"> <span class="para">170</span> cm</div>
+                        </div>
+                    </div>
+
+                    <div class="bmi-row two-cols">
+                        <div style="text-align: center;">
+                            <label >Weight (kg)</label>
+                            <div class="weight controls-inline" style="margin-top: 20px;margin-bottom: 20px;">
+                                <button class="small" onclick="minus()">−</button>
+                                <div class="count weightcount">50</div>
+                                <button class="small" onclick="add()">+</button>
+                            </div>
+                        </div>
+                        <div style="text-align: center;">
+                            <label>Age</label>
+                            <div class="weight controls-inline" style="margin-top: 20px;margin-bottom: 20px;">
+                                <button class="small" onclick="minus1()">−</button>
+                                <div class="count agecount">20</div>
+                                <button class="small" onclick="add1()">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bmi-row actions">
+                        <button class="btn calculate" onclick="calculateBMI()">Calculate BMI</button>
+                    </div>
+
+                    <div class="bmi-row result">
+                        <div class="bmi-result">Your BMI will appear here</div>
+                        <div class="bmi-category"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calculator loan">
+                <div class="calc-form">
+                    <div class="form-row"><label>Principal (₹)</label><input id="loanP" type="number" value="100000">
+                    </div>
+                    <div class="form-row"><label>Annual Rate (%)</label><input id="loanR" type="number" value="7.5"
+                            step="0.1"></div>
+                    <div class="form-row"><label>Years</label><input id="loanN" type="number" value="5"></div>
+                    <div class="form-row actions"><button class="btn" onclick="calculateLoan()">Calculate EMI</button>
+                    </div>
+                    <div class="result-box">
+                        <div id="loanResult">EMI result will appear here</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calculator interest">
+                <div class="calc-form">
+                    <div class="form-row"><label>Principal</label><input id="intP" type="number" value="10000"></div>
+                    <div class="form-row"><label>Rate (%) per annum</label><input id="intR" type="number" value="5">
+                    </div>
+                    <div class="form-row"><label>Years</label><input id="intT" type="number" value="2"></div>
+                    <div class="form-row"><label>Type</label>
+                        <select id="intType">
+                            <option value="simple">Simple Interest</option>
+                            <option value="compound">Compound Interest</option>
+                        </select>
+                    </div>
+                    <div class="form-row actions"><button class="btn" onclick="calculateInterest()">Calculate</button>
+                    </div>
+                    <div class="result-box">
+                        <div id="intResult">Interest result will appear here</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calculator age">
+                <div class="calc-form">
+                    <div class="form-row"><label>Date of Birth</label><input id="dob" type="date"></div>
+                    <div class="form-row actions"><button class="btn" onclick="calculateAge()">Calculate Age</button>
+                    </div>
+                    <div class="result-box">
+                        <div id="ageResult">Your age will appear here</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calculator unit">
+                <div class="calc-form">
+                    <div class="form-row"><label>Value</label><input id="unitValue" type="number" value="1"></div>
+                    <div class="form-row"><label>From</label>
+                        <select id="unitFrom">
+                            <option value="m">Meters</option>
+                            <option value="km">Kilometers</option>
+                            <option value="cm">Centimeters</option>
+                            <option value="mi">Miles</option>
+                        </select>
+                    </div>
+                    <div class="form-row"><label>To</label>
+                        <select id="unitTo">
+                            <option value="km">Kilometers</option>
+                            <option value="m">Meters</option>
+                            <option value="cm">Centimeters</option>
+                            <option value="mi">Miles</option>
+                        </select>
+                    </div>
+                    <div class="form-row actions"><button class="btn" onclick="convertUnit()">Convert</button></div>
+                    <div class="result-box">
+                        <div id="unitResult">Conversion result</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calculator tax">
+                <div class="calc-form">
+                    <div class="form-row"><label>Amount</label><input id="taxAmount" type="number" value="1000"></div>
+                    <div class="form-row"><label>Tax Rate (%)</label><input id="taxRate" type="number" value="18"></div>
+                    <div class="form-row actions"><button class="btn" onclick="calculateTax()">Calculate Tax</button>
+                    </div>
+                    <div class="result-box">
+                        <div id="taxResult">Tax result</div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+
+    <footer>
+        <p>© 2025 Smart Calculator | Built with ❤️ using HTML, CSS, and JavaScript</p>
+    </footer>
+    <script src="index.js"></script>
+</body>
+
+</html>

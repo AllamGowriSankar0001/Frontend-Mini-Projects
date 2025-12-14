@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Saved Books • Book-Nest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="saved.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1 class="logo"> <a href="index.html">BN</a></h1>
+      <div class="navbar">
+        <ul>
+          <li class="title">Book-Nest</li>
+        </ul>
+      </div>
+      <div class="actions">
+        <div style=" position: relative;"> <span class="material-symbols-outlined" aria-label="Saved"
+            onclick="window.location.href='saved.html'">favorite</span>
+          <p id="saved-quantity" style="position: absolute; top: 0; left: 32px; font-size: 10px;font-weight: bold;"></p>
+        </div>
+        <div style=" position: relative;"> <span class="material-symbols-outlined" aria-label="Cart"
+            onclick="window.location.href='cart.html'">shopping_cart</span>
+          <p id="cart-quantity" style="position: absolute; top: 0; left: 32px; font-size: 10px;font-weight: bold;"></p>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <div class="saved-container1">
+      <h1 id="h1count">Saved Books</h1>
+      <div class="action-tools">
+        <input type="text" id="search-bar" placeholder="Search your saved books here..." onkeyup="searchfun()"
+          autocomplete="off">
+        <select id="genres" onchange="genersfun()">
+          <option value="All">All Genres</option>
+          <option value="Southern Gothic">Southern Gothic</option>
+          <option value="Coming-of-age">Coming-of-age</option>
+          <option value="Dystopian">Dystopian</option>
+          <option value="Political fiction">Political fiction</option>
+          <option value="Classic">Classic</option>
+          <option value="Tragedy">Tragedy</option>
+          <option value="Romance">Romance</option>
+          <option value="Adventure">Adventure</option>
+          <option value="Historical">Historical</option>
+          <option value="Fantasy">Fantasy</option>
+          <option value="Epic">Epic</option>
+          <option value="Young Adult">Young Adult</option>
+          <option value="Philosophical">Philosophical</option>
+          <option value="Drama">Drama</option>
+          <option value="Science Fiction">Science Fiction</option>
+          <option value="Psychological fiction">Psychological fiction</option>
+          <option value="Satire">Satire</option>
+          <option value="Gothic">Gothic</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Mystery">Mystery</option>
+          <option value="Children's Literature">Children's Literature</option>
+          <option value="Magical Realism">Magical Realism</option>
+          <option value="Literary Fiction">Literary Fiction</option>
+          <option value="Post-apocalyptic">Post-apocalyptic</option>
+          <option value="Speculative Fiction">Speculative Fiction</option>
+          <option value="Psychological Thriller">Psychological Thriller</option>
+          <option value="Space Opera">Space Opera</option>
+          <option value="Contemporary Fiction">Contemporary Fiction</option>
+          <option value="Memoir">Memoir</option>
+          <option value="Biography">Biography</option>
+          <option value="Mythology">Mythology</option>
+          <option value="Manga">Manga</option>
+          <option value="Action">Action</option>
+          <option value="Dark Fantasy">Dark Fantasy</option>
+          <option value="Superhero">Superhero</option>
+          <option value="Action Comedy">Action Comedy</option>
+          <option value="Horror">Horror</option>
+          <option value="Supernatural">Supernatural</option>
+          <option value="Sports">Sports</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Historical Fiction">Historical Fiction</option>
+        </select>
+        <button class="danger" onclick="clearall()">Clear All</button>
+        <!-- <label for="search-bar"></label> -->
+      </div>
+      <div class="saved-container"></div>
+
+    </div>
+  </main>
+</body>
+<script src="saved.js"></script>
+</html>

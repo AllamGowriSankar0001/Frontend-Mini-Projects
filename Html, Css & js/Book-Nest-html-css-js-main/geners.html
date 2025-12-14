@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Genres • Book-Nest</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="geners.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1 class="logo"> <a href="index.html">BN</a></h1>
+            <div class="navbar">
+                <ul>
+                    <li class="title">Book-Nest</li>
+                </ul>
+            </div>
+            <div class="actions">
+                <div style=" position: relative;"> <span class="material-symbols-outlined" aria-label="Saved"
+                        onclick="window.location.href='saved.html'">favorite</span>
+                    <p id="saved-quantity"
+                        style="position: absolute; top: 0; left: 32px; font-size: 10px;font-weight: bold;"></p>
+                </div>
+                <div style=" position: relative;"> <span class="material-symbols-outlined" aria-label="Cart"
+                        onclick="window.location.href='cart.html'">shopping_cart</span>
+                    <p id="cart-quantity"
+                        style="position: absolute; top: 0; left: 32px; font-size: 10px;font-weight: bold;"></p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <main class="browse">
+        <aside class="filters">
+            <p class="para">Explore Geners</p>
+            <div id="generslist"></div>
+        </aside>
+        <section class="results" aria-label="Results">
+            <div class="toolbar">
+                <input type="text" class="toolbar-search" placeholder="Search within selected genre..."
+                    aria-label="Search books" onkeyup="searchfun()" />
+                <div class="toolbar-actions">
+                    <select class="sort-select" aria-label="Sort by" id="sort" onchange="sortChange()">
+                        <option value="" disabled selected>Sort</option>
+                        <option value="rating-high">Rating (High to Low)</option>
+                        <option value="rating-low">Rating (Low to High)</option>
+                        <option value="price-low">Price (Low to High)</option>
+                        <option value="price-high">Price (High to Low)</option>
+                    </select>
+                    <a href="browser.html"><button class="btn-secondary  browse1">Browse Books</button></a>
+
+                </div>
+            </div>
+            <div id="grid" class="grid"></div>
+        </section>
+
+    </main>
+    <div class="toast" id="toast">
+
+       <script src="geners.js"></script>
+</body>
+
+</html>

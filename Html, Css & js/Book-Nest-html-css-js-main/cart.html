@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Cart • Book-Nest</title>
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="cart.css">
+
+</head>
+
+<body>
+  <header>
+    <nav>
+      <h1 class="logo"> <a href="index.html">BN</a></h1>
+      <div class="navbar">
+        <ul>
+          <li class="title">Book-Nest</li>
+        </ul>
+      </div>
+      <div class="actions">
+        <div style=" position: relative;"> <span class="material-symbols-outlined" aria-label="Saved"
+            onclick="window.location.href='saved.html'">favorite</span>
+          <p id="saved-quantity" style="position: absolute; top: 0; left: 32px; font-size: 10px;font-weight: bold;"></p>
+        </div>
+        <div style=" position: relative;"> <span class="material-symbols-outlined" aria-label="Cart"
+            onclick="window.location.href='cart.html'">shopping_cart</span>
+          <p id="cart-quantity" style="position: absolute; top: 0; left: 32px; font-size: 10px;font-weight: bold;"></p>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="cart-container">
+    <div class="cart-header">
+      <h1>Shopping Cart</h1>
+      <p>Review your items and proceed to checkout</p>
+    </div>
+
+    <div class="grid">
+      <div id="cart-container"></div>
+      <!-- Add Google Fonts (Poppins) in your <head> -->
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+      <div id="empty-state" class="empty-state" style="display:none; font-family: 'Poppins', sans-serif; text-align: center; padding: 40px; background: #fff; border-radius: 12px; box-shadow: 0 4px 12px rgba(0,0,0,0.08);     width: 100vw;
+    max-width: 100%;
+    margin: auto;
+    position: absolute;
+    top: 206px;
+    left: 0;">
+        <div style="font-size: 26px; font-weight: 600; margin-bottom: 20px; color: #333;">
+          Your cart is empty
+        </div>
+
+        <div class="cart-actions" style="display: flex; flex-direction: column; gap: 16px; margin-top: 10px;">
+          <a class="btn-primary" href="browser.html"
+            style="padding: 16px; font-size: 18px; font-weight: 600; text-decoration: none; border-radius: 8px; background: #000; color: #fff; transition: all 0.3s ease;">
+            Browse Books
+          </a>
+          <a class="btn-secondary" href="geners.html"
+            style="padding: 14px; font-size: 16px; font-weight: 500; text-decoration: none; border: 1px solid #ccc; border-radius: 8px; background: #fff; color: #333; transition: all 0.3s ease;">
+            Explore Genres
+          </a>
+        </div>
+      </div>
+
+      <div class="cart-summary" id="cart-summary" style="display: none; font-family: Poppins;">
+        <h1 style="font-size: 22px;text-align: left;">
+          Order Summary
+        </h1>
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-top: 30px; width: 100%; max-width: 400px;">
+          <div class="cart-total" style="font-size: 20px; display: flex; justify-content: space-between;">
+            <span>Subtotal:</span>
+            <span><span id="total-price">0.00</span>$</span>
+          </div>
+
+          <div class="cart-total" style="font-size: 20px; display: flex; justify-content: space-between;">
+            <span>Shipping:</span>
+            <span><span id="Shipping-price">0.00</span>$</span>
+          </div>
+
+          <div class="cart-total" style="font-size: 20px; display: flex; justify-content: space-between;">
+            <span>Tax:</span>
+            <span><span id="tax-price">0.00</span>$</span>
+          </div>
+
+          <hr style="margin: 8px 0; border: none; border-top: 1px solid #ddd;">
+
+          <div class="cart-total"
+            style="font-size: 22px; font-weight: bold; display: flex; justify-content: space-between;">
+            <span>Total:</span>
+            <span><span id="grand-total">0.00</span>$</span>
+          </div>
+        </div>
+
+
+        <div class="cart-actions"
+          style="display: flex; flex-direction: column; gap: 12px; margin-top: 8px; width: 100%; max-width: 290px; margin: auto;">
+          <button class="btn-primary" onclick="checkout()"
+            style="padding: 14px; font-size: 18px; font-weight: bold; border: none; border-radius: 28px; background: #000; color: #fff; cursor: pointer; transition: 0.3s;font-family: Poppins;"><i
+              class="fa-solid fa-heart" style="color: white;"></i>
+            Checkout
+          </button>
+
+          <button class="btn-secondary" onclick="clearCart()"
+            style="padding: 12px; font-size: 16px; font-weight: 500; border: 1px solid #ccc; border-radius: 28px; background: #ffffff00; color: #333; cursor: pointer; transition: 0.3s;      font-family:Poppins;">
+            Clear Cart
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <script src="cart.js">
+
+    // function renderCart(){
+    //     console.log(localStorage.getItem('cart'));
+
+    // }
+    // renderCart();
+   
+
+  </script>
+</body>
+
+</html>

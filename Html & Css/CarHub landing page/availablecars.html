@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Available Cars • CarHub</title>
+  <link rel="stylesheet" href="available_cars.css" />
+  <link rel="stylesheet" href="home.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Yatra+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Wendy+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Irish+Grover&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Vujahday+Script&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zhi+Mang+Xing&display=swap" rel="stylesheet">
+
+</head>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+
+<body>
+  <header >
+    <nav>
+      <h1 style="font-size: 70px; font-family: 'Irish Grover', cursive; float: left; margin-right: 30px;">
+        <a href="index.html">CARHUB</a>
+      </h1>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="availablecars.html" style="width: 250px;">Available Cars</a></li>
+        <li><a href="spare.html">Spare</a></li>
+        <li><a href="about.html">About</a></li>
+      </ul>
+      <input type="checkbox" id="menuToggle" aria-controls="mobileMenu" />
+      <label class="menu-toggle" for="menuToggle">☰</label>
+      <div class="hamburger" id="mobileMenu">
+        <div class="line"><a href="home.html">Home</a></div>
+        <div class="line"><a href="availablecars.html">Available Cars</a></div>
+        <div class="line"><a href="spare.html">Spare</a></div>
+        <div class="line"><a href="about.html">About</a></div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="available-hero">
+      <h2 class="available-title">Find Your Perfect Ride</h2>
+      <p class="available-sub">Browse our curated collection</p>
+      <div class="filters" aria-label="Filter by brand">
+        <input type="radio" name="brand" id="brand-all" checked>
+        <label for="brand-all">All</label>
+        <input type="radio" name="brand" id="brand-tesla">
+        <label for="brand-tesla">Tesla</label>
+        <input type="radio" name="brand" id="brand-bmw">
+        <label for="brand-bmw">BMW</label>
+        <input type="radio" name="brand" id="brand-mercedes">
+        <label for="brand-mercedes">Mercedes</label>
+        <input type="radio" name="brand" id="brand-ferrari">
+        <label for="brand-ferrari">Ferrari</label>
+        <input type="radio" name="brand" id="brand-ford">
+        <label for="brand-ford">Ford</label>
+        <input type="radio" name="brand" id="brand-honda">
+        <label for="brand-honda">Honda</label>
+        <input type="radio" name="brand" id="brand-toyota">
+        <label for="brand-toyota">Toyota</label>
+      </div>
+    </section>
+
+    <section class="cars-grid" id="carsGrid" aria-live="polite">
+      <!-- Tesla -->
+      <article class="car-card brand-tesla type-coupe">
+        <img src="https://hips.hearstapps.com/hmg-prod/amv-prod-cad-assets/wp-content/uploads/2017/11/Tesla-Roadster-103.jpg?crop=0.848xw:0.691xh;0.122xw,0.165xh&resize=1200:*" alt="Tesla Roadster" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Tesla Roadster</h3>
+          <p class="car-meta">Electric • Coupe</p>
+          <div class="car-actions"><span class="price-tag">Price: $200k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+      <article class="car-card brand-tesla type-sedan">
+        <img src="https://etimg.etb2bimg.com/photo/103268425.cms" alt="Tesla Model 3" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Tesla Model 3</h3>
+          <p class="car-meta">Electric • Sedan</p>
+          <div class="car-actions"><span class="price-tag">Price: $42k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+
+      <!-- BMW -->
+      <article class="car-card brand-bmw type-coupe">
+        <img src="https://bmwpc.nyc3.cdn.digitaloceanspaces.com/images/m4-gt4/bmw-m4-meet-beast.jpg" alt="BMW M4" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">BMW M4</h3>
+          <p class="car-meta">Gas • Coupe</p>
+            <div class="car-actions"><span class="price-tag">Price: $85k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+      <article class="car-card brand-bmw type-suv">
+        <img src="https://ssl.caranddriving.com/f2/images/new/big/bmwx50223.jpg" alt="BMW X5" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">BMW X5</h3>
+          <p class="car-meta">Gas • SUV</p>
+          <div class="car-actions"><span class="price-tag">Price: $67k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+
+      <!-- Mercedes -->
+      <article class="car-card brand-mercedes type-coupe">
+        <img src="https://acko-cms.ackoassets.com/2_ff2f346909.jpg" alt="Mercedes AMG GT" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Mercedes AMG GT</h3>
+          <p class="car-meta">Gas • Coupe</p>
+          <div class="car-actions"><span class="price-tag">Price: $140k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+      <article class="car-card brand-mercedes type-suv">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR33XdsyYBOt2br3ndbQXyiqVCSXRO9XYiLjg&s" alt="Mercedes GLS" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Mercedes GLS</h3>
+          <p class="car-meta">Gas • SUV</p>
+          <div class="car-actions"><span class="price-tag">Price: $89k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+
+      <!-- Ferrari -->
+      <article class="car-card brand-ferrari type-hypercar">
+        <img src="https://www.topgear.com/sites/default/files/cars-car/image/2020/07/dsc09285.jpg
+        " alt="Ferrari SF90 Stradale" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Ferrari SF90 Stradale</h3>
+          <p class="car-meta">Hybrid • Hypercar</p>
+          <div class="car-actions"><span class="price-tag">Price: $780k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+
+      <!-- Ford -->
+      <article class="car-card brand-ford type-coupe">
+        <img src="https://media.architecturaldigest.com/photos/59235b3a5048d15bd5b220ba/master/pass/2017-Ford-GT-front-three-quarters.jpeg" alt="Ford GT" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Ford GT</h3>
+          <p class="car-meta">Gas • Coupe</p>
+          <div class="car-actions"><span class="price-tag">Price: $500k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+      <article class="car-card brand-ford type-suv">
+        <img src="https://www.usnews.com/object/image/0000018c-6ea6-d7c8-a1cf-7fbf48ee0001/01-2024-ford-bronco-angular-front-jms.JPG?update-time=1702663605171&size=responsive640&format=webp" alt="Ford Bronco" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Ford Bronco</h3>
+          <p class="car-meta">Gas • SUV</p>
+          <div class="car-actions"><span class="price-tag">Price: $39k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+
+      <!-- Honda -->
+      <article class="car-card brand-honda type-coupe">
+        <img src="https://blenderartists.org/uploads/default/original/4X/3/8/1/38183c3e220122f47504268982b1ba25d0ab2f6f.png" alt="Honda NSX" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Honda NSX</h3>
+          <p class="car-meta">Hybrid • Coupe</p>
+          <div class="car-actions"><span class="price-tag">Price: $170k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+      <article class="car-card brand-honda type-sedan">
+        <img src="https://img.sm360.ca/images/article/bweb-honda-de-laval/135293//2025-honda-accord-hybride-1-1731427917878.jpg" alt="Honda Accord" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Honda Accord</h3>
+          <p class="car-meta">Hybrid • Sedan</p>
+          <div class="car-actions"><span class="price-tag">Price: $33k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+
+      <!-- Toyota -->
+      <article class="car-card brand-toyota type-suv">
+        <img src="https://media.ed.edmunds-media.com/toyota/rav4-hybrid/2025/oem/2025_toyota_rav4-hybrid_4dr-suv_se_fq_oem_1_1600.jpg" alt="Toyota RAV4" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Toyota RAV4</h3>
+          <p class="car-meta">Hybrid • SUV</p>
+          <div class="car-actions"><span class="price-tag">Price: $31k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+      <article class="car-card brand-toyota type-coupe">
+        <img src="https://di-uploads-pod16.dealerinspire.com/toyotaofnorthcharlotte/uploads/2022/10/N-Charlotte-Toyota-sports-car.jpg" alt="Toyota GR Supra" class="car-image">
+        <div class="car-info">
+          <h3 class="car-name">Toyota GR Supra</h3>
+          <p class="car-meta">Gas • Coupe</p>
+          <div class="car-actions"><span class="price-tag">Price: $55k</span><a class="btn-outline" href="#">Details</a><a class="btn-primary" href="#">Buy</a></div>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>
